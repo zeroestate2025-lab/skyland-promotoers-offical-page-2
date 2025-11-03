@@ -4,11 +4,13 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   server: {
-    host: "0.0.0.0",
-    port: process.env.PORT || 5173, // ✅ use Render-assigned port
+    host: true, // listen on all addresses
+    port: Number(process.env.PORT) || 5173,
+    strictPort: true, // throw if port is in use
   },
   preview: {
-    host: "0.0.0.0",
-    port: process.env.PORT || 5173,
+    host: true, // listen on all addresses
+    port: Number(process.env.PORT) || 5173,
+    strictPort: true, // throw if port is in use
   },
 })
