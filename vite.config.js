@@ -6,11 +6,12 @@ export default defineConfig({
   server: {
     host: true, // listen on all addresses
     port: Number(process.env.PORT) || 5173,
-    strictPort: true, // throw if port is in use
+    strictPort: true,
   },
   preview: {
-    host: true, // listen on all addresses
+    host: true,
     port: Number(process.env.PORT) || 5173,
-    strictPort: true, // throw if port is in use
+    strictPort: true,
+    allowedHosts: ['skyland-promotoers-offical-page-2-new.onrender.com'], // ✅ Add this line
   },
 })
